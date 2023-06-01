@@ -1,0 +1,20 @@
+Link: https://www.youtube.com/watch?v=V6mKVRU1evU
+
+Time complexity: The amount of time taken by an algorithm to execute a function
+
+Space complexity: The amount of memory taken by an algorithm to execute a function
+
+Big O notation: A way to represent the time and space complexity of an algorithm
+
+
+N = 1024
+j = 0
+count = 0
+while j<=N
+    j*=2
+    count +=1
+    print(count)
+
+TC = 1+1+N+1
+TC = O(N)
+
