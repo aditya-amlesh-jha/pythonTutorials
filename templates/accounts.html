@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accounts</title>
+</head>
+<body>
+    <h1>Bank Accounts</h1>
+    <ul>
+        {% for account in accounts.values() %}
+            <li>
+                <a href="/account/{{ account_number }}">{{ account.name }}</a>
+                - Balance: {{ account.balance }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

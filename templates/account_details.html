@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Account Details</title>
+</head>
+<body>
+    <h1>Account Details</h1>
+    <p>Account Name: {{ account.name }}</p>
+    <p>Account Balance: {{ account.balance }}</p>
+    <h2>Transactions</h2>
+    <ul>
+        {% for transaction in account.get_transactions() %}
+            {% for action, amount in transaction.items() %}
+                <li>{{ action }} - Amount: {{ amount }}</li>
+            {% endfor %}
+        {% endfor %}
+    </ul>
+    <h2>Perform Transaction</h2>
+    <form action="/account/{{ account_number }}" method="post">
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" required>
+        <br>
+        <input type="radio" name="action" value="deposit" required> Deposit
+        <input type="radio" name="action" value="withdraw" required> Withdraw
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
